@@ -94,9 +94,9 @@ where, as before, the variant is the Debian flavour you are running.
 
 ### Secure DNS
 
-There are many protocols for secure DNS resolving inculding DoT, DoH, and DNSCrypt alongside DNSSEC. Therefore, the Stubby DNS resolver has been bundled together with this container to provide just that.
+There are many protocols for secure DNS resolving inculding DoT, DoH, and DNSCrypt alongside DNSSEC. Therefore, the Unbound DNS resolver has been bundled together with this container to provide just that.
 
-First, we must configure Stubby through the container (this is only necessary if you used a volume for `/etc/wireguard`, otherwise do what you did to edit `wg[0-9].conf`):
+First, we must configure Unbound through the container (this is only necessary if you used a volume for `/etc/wireguard`, otherwise do what you did to edit `wg[0-9].conf`):
 
 ```sh
 docker exec -it <running container id> sh
