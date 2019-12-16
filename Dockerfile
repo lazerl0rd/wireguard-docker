@@ -11,10 +11,9 @@ RUN apk add --no-cache \
 	net-tools \
 	unbound
 
-# Install root certificates and DNSSEC trust anchor
+# Install root certificates
 RUN apk add --no-cache ca-certificates; \
-	update-ca-certificates; \
-	unbound-anchor
+	update-ca-certificates
 
 # Manage directories/files
 RUN mkdir -p \

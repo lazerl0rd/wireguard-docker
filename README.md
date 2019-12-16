@@ -111,7 +111,7 @@ Inside the `/etc/wireguard/unbound.conf` file you must [configure the Unbound re
 server:
   access-control: 127.0.0.0/8 allow
   access-control: ::1/128 allow
-  # auto-trust-anchor-file: "/usr/share/dnssec-root/trusted-key.key"
+  # auto-trust-anchor-file: "/etc/wireguard/dnssec-root.key"
   hide-identity: yes
   hide-version: yes
   interface: 0.0.0.0

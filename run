@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Start Unbound DNS resolver
+unbound-anchor -a /etc/wireguard/dnssec-root.key
 unbound -c /etc/wireguard/unbound.conf
 
 # Find a Wireguard interface
