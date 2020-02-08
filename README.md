@@ -10,6 +10,7 @@ A Debian Docker container for WireGuard.
 * [Extras](#extras)
   * [Secure DNS](#secure-dns)
   * [Bind Mounts](#bind-mounts)
+  * [IPv6 Support](#ipv6-support)
 * [Credits](#credits)
 
 ***
@@ -151,6 +152,16 @@ Use:
 
 ```sh
 --mount type=bind,source=<host dir>,target=/etc/wireguard,readonly
+```
+
+### IPv6 Support
+
+Docker put through a change a while back which disables IPv6 by default for containers. To re-gain the ability to have IPv6-able WireGuard, please add `--sysctl net.ipv6.conf.all.disable_ipv6=0` to your `docker run` command.
+
+For example:
+
+```
+docker run --cap-add net_admin --cap-add sys_module -v wireguard_conf:/etc/wireguard -p 5555:5555/udp --sysctl net.ipv6.conf.all.disable_ipv6=0 wireguard-docker:custom 
 ```
 
 ## Credits
